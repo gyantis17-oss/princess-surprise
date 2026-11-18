@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Princess 👑</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#ffe0ec,#fff5f8,#fbd0e1);
+  color: #71344f;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.crown {
+  font-size: 65px;
+  animation: float 2s infinite;
+}
+
+h1 {
+  font-size: 43px;
+  color: #c33f79;
+  margin: 15px 0;
+}
+
+h2 {
+  color: #c33f79;
+}
+
+p {
+  line-height: 1.8;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 24px;
+  background: #dc6495;
+  color: white;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #c33f7940;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+section {
+  padding: 55px 18px;
+}
+
+.card {
+  background: #ffffffc9;
+  border-radius: 22px;
+  padding: 25px;
+  margin: 18px auto;
+  max-width: 550px;
+  box-shadow: 0 8px 25px #b94e7720;
+}
+
+#letter {
+  display: none;
+  white-space: pre-line;
+  line-height: 2;
+  text-align: left;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 550px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 17px;
+  background: #f5bad0;
+}
+
+.question {
+  width: 100%;
+  background: #fff;
+  color: #a43d6c;
+  border: 1px solid #f3c3d5;
+}
+
+.answer {
+  display: none;
+  background: #fff5f9;
+  padding: 15px;
+  border-radius: 15px;
+  line-height: 1.7;
+}
+
+#final {
+  display: none;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #c33f79;
+}
+
+footer {
+  padding: 30px;
+  color: #a75a7a;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: rise 5s linear forwards;
+  z-index: 10;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width:380px) {
+  h1 { font-size: 34px; }
+  .gallery img { height: 145px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME -->
+
+<div class="hero">
+  <div class="crown">👑</div>
+
+  <h1>Hey Google 🫂✨</h1>
+
+  <p>
+    Someone has created a little world
+    just for you... 💗
+  </p>
+
+  <p>Are you ready for your surprise?</p>
+
+  <button onclick="startSurprise()">
+    Open Your Surprise 💌
+  </button>
+</div>
+
+<!-- LOVE LETTER -->
+
+<section id="letterSection">
+
+  <h2>A Letter For You 💌</h2>
+
+  <div class="card">
+
+    <div style="font-size:55px">💌</div>
+
+    <button onclick="openLetter()">
+      Open My Letter ❤️
+    </button>
+
+    <div id="letter">
+
+Happy Princess Day, my Google! 👑💗
+
+You are someone who makes ordinary moments feel special.
+
+I made this little website just to remind you how important you are to me.
+
+Your smile, your cute little habits and the beautiful memories we share mean so much.
+
+I hope you always stay happy, keep smiling and achieve everything you dream of.
+
+You deserve all the happiness in the world.
+
+Thank you for being YOU!
+
+Lots of love,
+Your Doodle 🫂✨
+
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section>
+
+  <h2>Our Little Memories 📸</h2>
+
+  <p>Some moments deserve to stay forever. 💗</p>
+
+  <div class="gallery">
+
+    <img src="images/photo1.jpg"
+         alt="Our memory 1"
+         onerror="this.style.opacity='.2'">
+
+    <img src="images/photo2.jpg"
+         alt="Our memory 2"
+         onerror="this.style.opacity='.2'">
+
+    <img src="images/photo3.jpg"
+         alt="Our memory 3"
+         onerror="this.style.opacity='.2'">
+
+    <img src="images/photo4.jpg"
+         alt="Our memory 4"
+         onerror="this.style.opacity='.2'">
+
+  </div>
+
+  <p style="font-size:13px">
+    Made with love, just for you. 🌷
+  </p>
+
+</section>
+
+<!-- LOVE QUESTIONS -->
+
+<section>
+
+  <h2>Little Love Questions 💕</h2>
+
+  <div class="card">
+
+    <button class="question"
+      onclick="answer(0)">
+      1. Who is the cutest person?
+    </button>
+
+    <div class="answer" id="a0">
+      Obviously YOU, Google! 😂❤️
+    </div>
+
+    <button class="question"
+      onclick="answer(1)">
+      2. Who is your favourite person?
+    </button>
+
+    <div class="answer" id="a1">
+      I hope your answer is Doodle! 🫂✨
+    </div>
+
+    <button class="question"
+      onclick="answer(2)">
+      3. What makes a day beautiful?
+    </button>
+
+    <div class="answer" id="a2">
+      A little happiness, a sweet conversation
+      and a smile from you. 💗
+    </div>
+
+    <button class="question"
+      onclick="answer(3)">
+      4. How special are you?
+    </button>
+
+    <div class="answer" id="a3">
+      More special than words can explain! 👑
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+
+<section>
+
+  <h2>One Last Surprise 🎁</h2>
+
+  <div class="card">
+
+    <div style="font-size:55px">🎀</div>
+
+    <p>
+      You've reached the final surprise!
+    </p>
+
+    <button onclick="finalSurprise()">
+      Tap Here, Princess 💗
+    </button>
+
+    <div id="final">
+
+      💗👑
+
+      <p>
+        Google, never forget how special you are.
+
+        I may not be able to give you a fairytale,
+        but I hope I can give you countless
+        beautiful memories.
+
+        Keep smiling, my princess!
+
+        HAPPY PRINCESS DAY! ❤️
+
+        Forever your Doodle 🫂✨
+
+      </p>
+
+      💖🌹💖
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ by Doodle 🫂✨
+  <br>
+  Exclusively for Google 👑
+</footer>
+
+<script>
+
+function startSurprise() {
+  document.getElementById("letterSection")
+    .scrollIntoView({behavior:"smooth"});
+  hearts();
+}
+
+function openLetter() {
+  let x = document.getElementById("letter");
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+    hearts();
+  }
+}
+
+function answer(n) {
+  let x = document.getElementById("a" + n);
+
+  x.style.display =
+    x.style.display === "block" ? "none" : "block";
+}
+
+function finalSurprise() {
+  document.getElementById("final").style.display = "block";
+  hearts();
+}
+
+function hearts() {
+  for (let i = 0; i < 18; i++) {
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = ["💗","💕","💖","✨","🌸"][
+      Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random()*20) + "px";
+    heart.style.animationDuration = (3 + Math.random()*3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6500);
+  }
+}
+
+setInterval(() => {
+  if (Math.random() > 0.5) hearts();
+}, 2500);
+
+</script>
+
+</body>
+</html>
